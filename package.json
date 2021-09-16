@@ -9,7 +9,8 @@
 	},
 	"files": [
 		"index.js",
-		"utils"
+		"utils",
+		"lib"
 	],
 	"author": {
 		"name": "Muhammad Yasser",
