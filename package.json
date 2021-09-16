@@ -1,5 +1,5 @@
 {
-	"name": "duration-cli",
+	"name": "dur-cli",
 	"description": "A simple CLI to show total duration of media files",
 	"version": "1.0.0",
 	"type": "module",
