@@ -1,0 +1,19 @@
+
+NEXT features to implement (order isn't a priority, unless it's important):
+
+[] add support for YouTube playlists
+
+[] move towards using ffmpeg-static instead of the current @ffrprobe-installer
+
+[] add an ability to skip downloading a new ffmpeg binary if it's already 
+   installed on the user machine
+
+[] add an ability to only get duration for a specified format (eg: mp4)
+
+[] only support recent version of Node.js
+
+[] update help text  make it more clear
+
+[] create a release binary
+
+[] edit flags aliases

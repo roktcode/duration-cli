@@ -1,0 +1,10 @@
+node_modules
+media_files
+backup
+TODO
+.shell-commands
+try.js
+temp.js
+google.apikey
+.env
+package-lock.json
