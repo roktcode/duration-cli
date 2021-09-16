@@ -5,18 +5,12 @@ I have a solution for you!!*
 install duration CLI using npm:
 
 ```sh
-npm i -g duration-cli
+npm i -g dur-cli
 ```
 
 <br>
 
-then, `cd` into any directory you want and run the following command:
-
-```sh
-dur
-```
-
-#### and voila 🚀
+then, `cd` into any directory you want and run `dur`
 
 
 ![Demo](https://i.imgur.com/LuTtqJH.gif)
