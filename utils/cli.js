@@ -37,6 +37,10 @@ const flags = {
 		desc: "Print help info",
 		default: false,
 	},
+	init: {
+		type: "string",
+		desc: "Init the CLI with Google API key",
+	},
 };
 
 const commands = {
