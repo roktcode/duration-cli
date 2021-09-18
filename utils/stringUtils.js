@@ -1,18 +1,14 @@
 export function formatDuration(duration) {
-	// 1 round duration to integer: 416458.971992 -> 416458
-	const roundDuration = Math.round(duration);
+	let seconds = duration;
 
-	// 2 split into hours, minutes and seconds
-	const h = Math.trunc(roundDuration / 3600);
+	let days = Math.floor(seconds / (3600 * 24));
+	seconds -= days * 3600 * 24;
+	let hours = Math.floor(seconds / 3600);
+	seconds -= hours * 3600;
+	let minutes = Math.floor(seconds / 60);
+	seconds -= minutes * 60;
 
-	const m =
-		h > 0
-			? Math.trunc((roundDuration % (h * 3600)) / 60)
-			: Math.trunc(roundDuration / 60);
-
-	const s = roundDuration % 60;
-
-	return { h, m, s };
+	return { d: days, h: hours, m: minutes, s: Math.floor(seconds) };
 }
 
 export function addZeroFormatting(n) {

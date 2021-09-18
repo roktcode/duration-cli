@@ -4,7 +4,7 @@
  * duration-cli
  * A CLI to get total duration of media files
  *
- * @author Muhammad Yasser <https://iamrokt.github.io>
+ * @author Muhammad Yasser <https://roktcode.github.io>
  *
  */
 
@@ -14,13 +14,15 @@ import chalk from "chalk";
 import ora from "ora";
 import { to } from "await-to-js";
 import getFilePaths from "./lib/getFilePaths.js";
-import getDuration, { failedFiles } from "./lib/getDuration.js";
+import getDuration from "./lib/getDuration.js";
 import showLog from "./lib/showLog.js";
 import exitIfNoFilesFound from "./lib/exitIfNoFilesFound.js";
 import exitIfErrorHappened from "./lib/exitIfErrorHappened.js";
 import showOnlySeconds from "./lib/showOnlySeconds.js";
 import showDurationInfo from "./lib/showDurationInfo.js";
 import showDurationErrors from "./lib/showDurationErrors.js";
+import initGoogleAPIKey from "./lib/youtubePlaylist/initGoogleAPIKey.js";
+import getYTPlaylistDuration from "./lib/youtubePlaylist/getYTPlaylistDuration.js";
 
 const spinner = ora({ text: `` });
 
@@ -33,11 +35,28 @@ function hideSpinner() {
 }
 
 const { input, flags } = cli;
-const { clear, log, minimal, parent, help } = flags;
+const { clear, log, minimal, parent, help, playlist } = flags;
 
 (async function () {
 	!minimal && (await init({ clear }));
 	(input.includes(`help`) || help) && cli.showHelp(0);
+
+	if (input.includes("init")) {
+		await initGoogleAPIKey();
+		process.exit(0);
+	}
+
+	if (playlist) {
+		showSpinner();
+		const [ytDurationError, ytDurationData] = await to(
+			getYTPlaylistDuration(playlist)
+		);
+		hideSpinner();
+		exitIfErrorHappened([ytDurationError], spinner);
+		showDurationInfo(ytDurationData.totalDuration, ytDurationData.fullURL);
+
+		process.exit(0);
+	}
 
 	!minimal && showSpinner();
 
@@ -47,21 +66,19 @@ const { clear, log, minimal, parent, help } = flags;
 
 	const [durationError, durationData] = await to(getDuration(files));
 
-	exitIfErrorHappened(globError, durationError);
+	exitIfErrorHappened([globError, durationError], spinner);
 
 	minimal && showOnlySeconds(durationData.totalDuration);
 
 	hideSpinner();
 
-	!log && showDurationErrors(failedFiles.length);
+	!log && showDurationErrors(durationData.failedFiles.length);
 
 	console.log();
 
-	showDurationInfo(durationData.totalDuration);
+	showDurationInfo(durationData.totalDuration, process.cwd());
 
-	console.log();
-
-	log && showLog(durationData, files, failedFiles, parent);
+	log && showLog(durationData, files, durationData.failedFiles, parent);
 
 	console.log();
 })();
