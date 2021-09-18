@@ -69,7 +69,7 @@ dur -l
 
 * A little bit of lagging might happen when calculating a large number of media files
 
-* Slightly large download size (mainly because of the bundled version of ffprobe binary which is around 70MB)
+* Slightly large download size
 
 <br>
 
