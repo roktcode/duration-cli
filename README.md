@@ -31,11 +31,12 @@ then, `cd` into any directory you want and run `dur`
 dur --pl PUT_PLAYLIST_ID_OR_URL_HERE
 ```
 
-<br>
-
 ### How does it work?
 
 The CLI by default checks the current folder and it's sub-folders (recursively) for any media files, then it will show the total duration of the media files after it's finished calculating it.
+
+### See a live demo of the app:
+Check out [this video](https://youtu.be/JKXq7reTbAM) to see what the app is doing
 
 
 #### Disclaimer
