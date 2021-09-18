@@ -1,7 +1,7 @@
 
 NEXT features to implement (order isn't a priority, unless it's important):
 
-[] add support for YouTube playlists
+[x] add support for YouTube playlists
 
 [] move towards using ffmpeg-static instead of the current @ffrprobe-installer
 

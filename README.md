@@ -17,6 +17,22 @@ then, `cd` into any directory you want and run `dur`
 
 <br>
 
+### 🚀 **NEW** 🚀 Get duration for YouTube playlist:
+
+
+
+1- first, have your Google API key, follow [this tutorial](https://youtu.be/Jl9Nitf8PJs) to show you how to get your own API key
+
+2- run the following command `dur init` then paste the API key you got from the previous step
+
+3- run the following command to get YouTube playlist duration, put the playlist ID or URL after the --pl flag
+
+```bash
+dur --pl PUT_PLAYLIST_ID_OR_URL_HERE
+```
+
+<br>
+
 ### How does it work?
 
 The CLI by default checks the current folder and it's sub-folders (recursively) for any media files, then it will show the total duration of the media files after it's finished calculating it.
@@ -41,13 +57,11 @@ dur -l
 ```
 <br>
 
-**What's new in version 2.1?**
+**What's new in version 2?**
 
-* Added new features like minimal view, debug info and more...
+* Added ability to get YouTube playlists duration
 * Improved the UI
-* Switched to use ffprobe directly without depending on external wrapper packages
-* The CLI now comes with a bundled ffprobe version, so you won't bother installing yourself
-* Removed some 3rd party dependencies to make the CLI size smaller
+* Fixed bugs
 
 ***Known issues***:
 

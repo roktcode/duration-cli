@@ -37,15 +37,19 @@ const flags = {
 		desc: "Print help info",
 		default: false,
 	},
-	init: {
+	playlist: {
 		type: "string",
-		desc: "Init the CLI with Google API key",
+		alias: "pl",
+		desc: "Print total duration of a YouTube playlist",
 	},
 };
 
 const commands = {
 	help: {
 		desc: `Print help info`,
+	},
+	init: {
+		desc: "Init the CLI with a Google API key",
 	},
 };
 
