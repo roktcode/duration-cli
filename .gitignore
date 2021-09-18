@@ -8,3 +8,4 @@ temp.js
 google.apikey
 .env
 package-lock.json
+lib/youtubePlaylist/key.json
