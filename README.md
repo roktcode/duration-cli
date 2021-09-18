@@ -31,13 +31,12 @@ then, `cd` into any directory you want and run `dur`
 dur --pl PUT_PLAYLIST_ID_OR_URL_HERE
 ```
 
-### How does it work?
+#### How does it work?
 
 The CLI by default checks the current folder and it's sub-folders (recursively) for any media files, then it will show the total duration of the media files after it's finished calculating it.
 
-### See a live demo of the app:
-Check out [this video](https://youtu.be/JKXq7reTbAM) to see what the app is doing
-
+#### See a live demo of the app:
+Check out [this video](https://youtu.be/JKXq7reTbAM) to see what the app can do!!
 
 #### Disclaimer
 
@@ -64,12 +63,18 @@ dur -l
 * Improved the UI
 * Fixed bugs
 
+<br>
+
 ***Known issues***:
 
 * A little bit of lagging might happen when calculating a large number of media files
 
 * Slightly large download size (mainly because of the bundled version of ffprobe binary which is around 70MB)
 
-In case you face any bug, or have improvement in mind, contact me at my email iamrokt@gmail.com, or my Instagram @inrokt
+<br>
 
-Any contribution to the CLI is highly appreciated, so don't hesitate to show your magic 🎩
+> **Any contribution to the CLI is highly appreciated, so don't hesitate to show your magic 🎩**
+
+### contact me:
+twitter: [@roktmy](https://www.twitter.com/roktmy)
+insta: [@roktmy](https://www.instagram.com/inrokt)
