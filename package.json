@@ -27,11 +27,10 @@
 		"cli-handle-error": "^4.4.0",
 		"cli-handle-unhandled": "^1.1.1",
 		"cli-meow-help": "^2.0.2",
-		"data-store": "^4.0.3",
 		"enquirer": "^2.3.6",
 		"execa": "^5.1.1",
 		"glob": "^7.1.7",
-		"googleapis": "^85.0.0",
+		"gypd": "^1.0.2",
 		"meow": "^10.1.1",
 		"npm": "^7.23.0",
 		"ora": "^6.0.0"
@@ -46,8 +45,5 @@
 		"audio",
 		"cli",
 		"ffmpeg"
-	],
-	"devDependencies": {
-		"dotenv": "^10.0.0"
-	}
+	]
 }
