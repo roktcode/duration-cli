@@ -35,7 +35,7 @@ function hideSpinner() {
 }
 
 const { input, flags } = cli;
-const { clear, log, minimal, parent, help, playlist } = flags;
+const { clear, log, minimal, parent, help, playlist, time } = flags;
 
 (async function () {
 	!minimal && (await init({ clear }));
@@ -76,7 +76,7 @@ const { clear, log, minimal, parent, help, playlist } = flags;
 
 	console.log();
 
-	showDurationInfo(durationData.totalDuration, process.cwd(), durationData.calcTime);
+	showDurationInfo(durationData.totalDuration, process.cwd(), durationData.calcTime, time);
 
 	log && showLog(durationData, files, durationData.failedFiles, parent);
 

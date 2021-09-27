@@ -42,6 +42,11 @@ const flags = {
 		alias: "pl",
 		desc: "Print total duration of a YouTube playlist",
 	},
+	time: {
+		type: "boolean",
+		alias: 't',
+		desc: "Print calculation process time"
+	}
 };
 
 const commands = {
