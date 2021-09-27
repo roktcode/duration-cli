@@ -76,7 +76,7 @@ const { clear, log, minimal, parent, help, playlist } = flags;
 
 	console.log();
 
-	showDurationInfo(durationData.totalDuration, process.cwd());
+	showDurationInfo(durationData.totalDuration, process.cwd(), durationData.calcTime);
 
 	log && showLog(durationData, files, durationData.failedFiles, parent);
 
