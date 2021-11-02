@@ -60,11 +60,15 @@ const { clear, log, minimal, parent, help, playlist, time } = flags;
 
 	!minimal && showSpinner();
 
+	const filesStart = new Date();
 	const [globError, files] = await to(getFilePaths(parent));
+	const filesEnd = new Date();
 
 	exitIfNoFilesFound(files.length, spinner);
 
+	const durationStart = new Date();
 	const [durationError, durationData] = await to(getDuration(files));
+	const durationEnd = new Date();
 
 	exitIfErrorHappened([globError, durationError], spinner);
 
@@ -76,7 +80,12 @@ const { clear, log, minimal, parent, help, playlist, time } = flags;
 
 	console.log();
 
-	showDurationInfo(durationData.totalDuration, process.cwd(), durationData.calcTime, time);
+	showDurationInfo(
+		durationData.totalDuration,
+		process.cwd(),
+		durationData.calcTime,
+		time
+	);
 
 	log && showLog(durationData, files, durationData.failedFiles, parent);
 

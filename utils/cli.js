@@ -46,7 +46,7 @@ const flags = {
 		type: "boolean",
 		alias: 't',
 		desc: "Print calculation process time"
-	}
+	},
 };
 
 const commands = {
