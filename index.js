@@ -80,16 +80,12 @@ const { clear, log, minimal, parent, help, playlist, time } = flags;
 
 	console.log();
 
-<<<<<<< HEAD
-	showDurationInfo(durationData.totalDuration, process.cwd(), durationData.calcTime);
-=======
 	showDurationInfo(
 		durationData.totalDuration,
 		process.cwd(),
 		durationData.calcTime,
 		time
 	);
->>>>>>> next
 
 	log && showLog(durationData, files, durationData.failedFiles, parent);
 
