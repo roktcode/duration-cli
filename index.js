@@ -35,7 +35,7 @@ function hideSpinner() {
 }
 
 const { input, flags } = cli;
-const { clear, log, minimal, parent, help, playlist } = flags;
+const { clear, log, minimal, parent, help, playlist, time } = flags;
 
 (async function () {
 	!minimal && (await init({ clear }));
@@ -60,11 +60,15 @@ const { clear, log, minimal, parent, help, playlist } = flags;
 
 	!minimal && showSpinner();
 
+	const filesStart = new Date();
 	const [globError, files] = await to(getFilePaths(parent));
+	const filesEnd = new Date();
 
 	exitIfNoFilesFound(files.length, spinner);
 
+	const durationStart = new Date();
 	const [durationError, durationData] = await to(getDuration(files));
+	const durationEnd = new Date();
 
 	exitIfErrorHappened([globError, durationError], spinner);
 
@@ -76,7 +80,16 @@ const { clear, log, minimal, parent, help, playlist } = flags;
 
 	console.log();
 
+<<<<<<< HEAD
 	showDurationInfo(durationData.totalDuration, process.cwd(), durationData.calcTime);
+=======
+	showDurationInfo(
+		durationData.totalDuration,
+		process.cwd(),
+		durationData.calcTime,
+		time
+	);
+>>>>>>> next
 
 	log && showLog(durationData, files, durationData.failedFiles, parent);
 
