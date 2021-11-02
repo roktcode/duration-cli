@@ -13,7 +13,7 @@ npm i -g dur-cli
 then, `cd` into any directory you want and run `dur`
 
 
-![Demo](https://i.imgur.com/LuTtqJH.gif)
+![Demo](https://i.imgur.com/OKQSVif.gif)
 
 <br>
 
