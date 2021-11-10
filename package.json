@@ -1,7 +1,7 @@
 {
 	"name": "dur-cli",
 	"description": "A simple CLI to show total duration of media files",
-	"version": "2.2.0",
+	"version": "2.2.1",
 	"type": "module",
 	"bin": {
 		"duration-cli": "index.js",
