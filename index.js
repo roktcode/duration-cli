@@ -87,7 +87,7 @@ const { clear, log, minimal, parent, help, playlist, time } = flags;
 		time
 	);
 
-	log && showLog(durationData, files, durationData.failedFiles, parent);
+	log && showLog(durationData, files, durationData.failedFiles, parent, durationData.calcTime);
 
 	console.log();
 })();
