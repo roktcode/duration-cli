@@ -76,5 +76,4 @@ dur -l
 > **Any contribution to the CLI is highly appreciated, so don't hesitate to show your magic 🎩**
 
 ### contact me:
-twitter: [@roktmy](https://www.twitter.com/roktmy)
-insta: [@roktmy](https://www.instagram.com/inrokt)
+twitter: [@roktmy](https://twitter.com/roktmy/)
