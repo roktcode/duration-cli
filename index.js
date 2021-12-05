@@ -64,7 +64,7 @@ const { clear, log, minimal, parent, help, playlist, time } = flags;
 	const [globError, files] = await to(getFilePaths(parent));
 	const filesEnd = new Date();
 
-	exitIfNoFilesFound(files.length, spinner);
+	exitIfNoFilesFound(files.length, spinner, process.cwd(), parent);
 
 	const durationStart = new Date();
 	const [durationError, durationData] = await to(getDuration(files));
@@ -84,7 +84,8 @@ const { clear, log, minimal, parent, help, playlist, time } = flags;
 		durationData.totalDuration,
 		process.cwd(),
 		durationData.calcTime,
-		time
+		time,
+		parent
 	);
 
 	log && showLog(durationData, files, durationData.failedFiles, parent, durationData.calcTime);
